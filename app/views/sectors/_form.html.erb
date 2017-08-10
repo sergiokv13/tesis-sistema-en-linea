@@ -1,0 +1,30 @@
+<%= form_with(model: sector, local: true) do |form| %>
+  <% if sector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sector.errors.count, "error") %> prohibited this sector from being saved:</h2>
+
+      <ul>
+      <% sector.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :sector_nombre, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :numero_maximo_votantes %>
+    <%= form.number_field :numero_maximo_votantes, id: :sector_numero_maximo_votantes, :class => "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= form.label :nombre_encargado %>
+    <%= form.text_field :nombre_encargado, id: :sector_nombre_encargado, :class => "form-control" %>
+  </div>
+
+    <%= form.submit "Crear sector", :class => "btn btn-success" %>
+<% end %>

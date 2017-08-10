@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Partidos</h1>
+<center>
+<table class="table table-striped">
+  <thead>
+      <th>Nombre</th>
+      <th colspan="2">Colores</th>
+      <th>Información</th>
+      <th >Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @partidos.each do |partido| %>
+      <tr>
+        <td><%= partido.nombre %></td>
+        <td colspan="1" style="background-color: <%=partido.color%>;"></td>
+        <td colspan="1" style="background-color: <%=partido.color_secundario%>;"></td>
+        <td><%= partido.informacion %></td>
+        <td>
+          <% if current_usuario.rol == "Encargado de votacion" %>
+            <%= link_to 'ver', partido_path(partido) %> |
+            <%= link_to 'editar', edit_partido_path(partido) %>
+          <%else%>
+            No hay acciones para tu rol de usuario.
+          <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<center>
+<br>
+
+<%= link_to 'Nuevo partido', new_partido_path %><br>

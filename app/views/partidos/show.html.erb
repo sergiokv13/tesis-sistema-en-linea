@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @partido.nombre %>
+</p>
+
+<p>
+  <strong>Información:</strong>
+  <%= @partido.informacion %>
+</p>
+
+<p>
+  <strong>Color primario del partido:</strong>
+  <center>
+  <div style="height: 100px; width: 100px; background-color: <%=@partido.color%>"></div>
+  </center>
+</p>
+
+<p>
+  <strong>Color secundario del partido:</strong>
+  <center>
+  <div style="height: 100px; width: 100px; background-color: <%=@partido.color_secundario%>"></div>
+  </center>
+</p>
+
+<p>
+  <strong>Opciones de voto:</strong><br>
+  	<% if @partido.opcions.count != 0 %>
+	  <% @partido.opcions.each do |opcion| %>
+	  	<a href="/opcions/<%= opcion.id %>"><%= opcion.nombre %></a><br>
+	  <% end %>
+	 <% else %>
+	 	<a href="/opcions/">Administrar opciones para el partido.</a>
+	 <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_partido_path(@partido) %> |
+<%= link_to 'Back', partidos_path %>

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>recintos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Numero maximo votantes</th>
+      <th>Nombre del encargado</th>
+      <th>Cuenta de acceso:</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recintos.each do |recinto| %>
+      <tr>
+        <td><%= recinto.nombre %></td>
+        <td><%= recinto.numero_maximo_votantes %></td>
+        <td><%= recinto.nombre_encargado %></td>
+        <td>
+          <% if recinto.encargado != nil %>
+            <strong>Cuenta: </strong><%=recinto.encargado.email%><br>
+            <strong>Contraseña: </strong><%=recinto.encargado.password_reset%>
+          <%else%>
+            Aun no se genero una cuenta.
+          <%end%>
+        </td>
+        <td><a href="/recintos/<%=recinto.id%>">Ver</a> | <a href="/recintos/generar_cuenta/<%=recinto.id%>">Generar o reiniciar cuenta</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo recinto', new_recinto_path %><br>

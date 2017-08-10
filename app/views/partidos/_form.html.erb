@@ -1,0 +1,58 @@
+<%= form_with(model: partido, local: true) do |form| %>
+  <% if partido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(partido.errors.count, "error") %> prohibited this partido from being saved:</h2>
+
+      <ul>
+      <% partido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :partido_nombre, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :informacion %>
+    <%= form.text_field :informacion, id: :partido_informacion, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :color %> <br>
+    <%= form.text_field :color, id: :partido_color, :class=> "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :color_secundario %><br>
+    <%= form.text_field :color_secundario, id: :partido_color_secundario, :class=> "form-control" %>
+  </div>
+
+<script>
+<%if partido.color.nil? then partido.color = '#000' end%>
+<%if partido.color_secundario.nil? then partido.color_secundario = '#000' end%>
+
+
+$("#partido_color").spectrum({
+    preferredFormat: "hex",
+    color: "<%=partido.color%>"
+});
+
+
+$("#partido_color_secundario").spectrum({
+    preferredFormat: "hex",
+    color: "<%=partido.color_secundario%>"
+});
+
+  $("#partido_color_secundario").val("<%=partido.color_secundario%>");
+  $("#partido_color").val("<%=partido.color%>");
+
+</script>
+
+<%= form.submit %>
+
+<% end %>
+

@@ -1,0 +1,16 @@
+<h1>Sistema en linea</h1>
+<strong>Usted tiene el rol de:</strong> <%= current_usuario.rol %><br>
+<hr class="devider">
+
+<div class="col-lg-6">
+	<% if !@votacion %>
+		<h2>No hay ninguna votación iniciada.</h2>
+		<a href="/votacions/new" class="btn btn-success">Crear votación</a>
+	<% else %>
+		<%= render "/welcome/votacion_info"%>
+	<% end %>
+</div>
+
+<div class="col-lg-6">
+	<%= render "/welcome/acciones"%>
+</div>

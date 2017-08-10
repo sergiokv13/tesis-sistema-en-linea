@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  numero_maximo_votantes: 1
+  direccion_blockchain: MyString
+  recinto: one
+
+two:
+  nombre: MyString
+  numero_maximo_votantes: 1
+  direccion_blockchain: MyString
+  recinto: two

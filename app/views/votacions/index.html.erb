@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Votacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Razon</th>
+      <th>Inicio</th>
+      <th>Finalizacion</th>
+      <th>Numero maximo votantes</th>
+      <th>Numero maximo autenticaciones</th>
+      <th>Tiempo maximo votos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @votacions.each do |votacion| %>
+      <tr>
+        <td><%= votacion.razon %></td>
+        <td><%= votacion.inicio %></td>
+        <td><%= votacion.finalizacion %></td>
+        <td><%= votacion.numero_maximo_votantes %></td>
+        <td><%= votacion.numero_maximo_autenticaciones %></td>
+        <td><%= votacion.tiempo_maximo_votos %></td>
+        <td><%= link_to 'Show', votacion %></td>
+        <td><%= link_to 'Edit', edit_votacion_path(votacion) %></td>
+        <td><%= link_to 'Destroy', votacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Votacion', new_votacion_path %>

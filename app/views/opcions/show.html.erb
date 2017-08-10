@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @opcion.nombre %>
+</p>
+
+<p>
+  <strong>Información:</strong>
+  <%= @opcion.informacion %>
+</p>
+
+
+<p>
+  <strong>Partido:</strong><br>
+  <a href="/partidos/<%= @opcion.partido.id %>"><%= @opcion.partido.nombre %></a>
+</p>
+
+<%= link_to 'Edit', edit_opcion_path(@opcion) %> |
+<%= link_to 'Back', opcions_path %>

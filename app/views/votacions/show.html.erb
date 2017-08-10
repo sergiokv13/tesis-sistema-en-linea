@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Razon:</strong>
+  <%= @votacion.razon %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @votacion.inicio %>
+</p>
+
+<p>
+  <strong>Finalizacion:</strong>
+  <%= @votacion.finalizacion %>
+</p>
+
+<p>
+  <strong>Numero maximo votantes:</strong>
+  <%= @votacion.numero_maximo_votantes %>
+</p>
+
+<p>
+  <strong>Numero maximo autenticaciones:</strong>
+  <%= @votacion.numero_maximo_autenticaciones %>
+</p>
+
+<p>
+  <strong>Tiempo maximo votos:</strong>
+  <%= @votacion.tiempo_maximo_votos %>
+</p>
+
+<% @votacion.departamentos.each do |departamento| %>
+  <a href="/departamentos/<%=departamento.id%>"> <%=departamento.nombre%> - <%=departamento.numero_maximo_votantes%> </a> <br>
+<% end %>
+
+Usted ve necesario
+<%= link_to 'editar', edit_votacion_path(@votacion) %> esta información?<br>
+Si desea <a href="/">continuar</a> la información no podra ser editada nuevamente.

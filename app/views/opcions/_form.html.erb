@@ -1,0 +1,31 @@
+<%= form_with(model: opcion, local: true) do |form| %>
+  <% if opcion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(opcion.errors.count, "error") %> prohibited this opcion from being saved:</h2>
+
+      <ul>
+      <% opcion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :opcion_nombre, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :informacion %>
+    <%= form.text_field :informacion, id: :opcion_informacion, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :partido %>
+    <%= form.collection_select :partido_id, Partido.all, :id, :nombre %>
+  </div>
+
+    <%= form.submit %>
+
+<% end %>

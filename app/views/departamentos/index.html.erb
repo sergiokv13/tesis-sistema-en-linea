@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Departamentos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Numero maximo votantes</th>
+      <th>Nombre del encargado</th>
+      <th>Cuenta de acceso:</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departamentos.each do |departamento| %>
+      <tr>
+        <td><%= departamento.nombre %></td>
+        <td><%= departamento.numero_maximo_votantes %></td>
+        <td><%= departamento.nombre_encargado %></td>
+        <td>
+          <% if departamento.encargado != nil %>
+            <strong>Cuenta: </strong><%=departamento.encargado.email%><br>
+            <strong>Contraseña: </strong><%=departamento.encargado.password_reset%>
+          <%else%>
+            Aun no se genero una cuenta.
+          <%end%>
+        </td>
+        <td><a href="/departamentos/<%=departamento.id%>">Ver</a> | <%= link_to 'editar', edit_departamento_path(departamento) %> | <a href="/departamentos/generar_cuenta/<%=departamento.id%>">Generar o reiniciar cuenta</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo departamento', new_departamento_path %><br>

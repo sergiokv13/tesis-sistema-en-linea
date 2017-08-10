@@ -1,0 +1,36 @@
+<%= form_with(model: mesa, local: true) do |form| %>
+  <% if mesa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mesa.errors.count, "error") %> prohibited this mesa from being saved:</h2>
+
+      <ul>
+      <% mesa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :mesa_nombre, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :numero_maximo_votantes %>
+    <%= form.number_field :numero_maximo_votantes, id: :mesa_numero_maximo_votantes, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :direccion_blockchain %>
+    <%= form.text_field :direccion_blockchain, id: :mesa_direccion_blockchain, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nombre_encargado %>
+    <%= form.text_field :nombre_encargado, id: :mesa_nombre_encargado, :class => "form-control" %>
+  </div>
+
+    <%= form.submit "Crear mesa", :class => "btn btn-sucess" %>
+
+<% end %>

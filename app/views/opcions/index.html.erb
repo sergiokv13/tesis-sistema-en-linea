@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Opciones</h1>
+<center>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Información</th>
+      <th>Partido</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opcions.each do |opcion| %>
+      <tr>
+        <td><%= opcion.nombre %></td>
+        <td><%= opcion.informacion %></td>
+        <td><%= opcion.partido.nombre %></td>
+        <td>
+          <% if current_usuario.rol == "Encargado de votacion" %>
+            <%= link_to 'ver', opcion_path(opcion) %> | 
+            <%= link_to 'editar', edit_opcion_path(opcion) %>
+          <%else%>
+            No hay acciones para tu rol de usuario.
+          <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<center>
+
+<br>
+
+<%= link_to 'Nuevo opcion', new_opcion_path %><br>

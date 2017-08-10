@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @sector.nombre %>
+</p>
+
+<p>
+  <strong>Numero maximo votantes:</strong>
+  <%= @sector.numero_maximo_votantes %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= @sector.departamento %>
+</p>
+
+<%= link_to 'Edit', edit_sector_path(@sector) %> |
+<%= link_to 'Back', sectors_path %>

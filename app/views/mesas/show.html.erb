@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @mesa.nombre %>
+</p>
+
+<p>
+  <strong>Numero maximo votantes:</strong>
+  <%= @mesa.numero_maximo_votantes %>
+</p>
+
+<p>
+  <strong>Direccion blockchain:</strong>
+  <%= @mesa.direccion_blockchain %>
+</p>
+
+<p>
+  <strong>Recinto:</strong>
+  <%= @mesa.recinto %>
+</p>
+
+<%= link_to 'Edit', edit_mesa_path(@mesa) %> |
+<%= link_to 'Back', mesas_path %>

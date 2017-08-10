@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>sectors</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Numero maximo votantes</th>
+      <th>Nombre del encargado</th>
+      <th>Cuenta de acceso:</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sectors.each do |sector| %>
+      <tr>
+        <td><%= sector.nombre %></td>
+        <td><%= sector.numero_maximo_votantes %></td>
+        <td><%= sector.nombre_encargado %></td>
+        <td>
+          <% if sector.encargado != nil %>
+            <strong>Cuenta: </strong><%=sector.encargado.email%><br>
+            <strong>Contraseña: </strong><%=sector.encargado.password_reset%>
+          <%else%>
+            Aun no se genero una cuenta.
+          <%end%>
+        </td>
+        <td><a href="/sectors/<%=sector.id%>">Ver</a> | <a href="/sectors/generar_cuenta/<%=sector.id%>">Generar o reiniciar cuenta</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo sector', new_sector_path %><br>

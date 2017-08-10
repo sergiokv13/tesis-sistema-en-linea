@@ -1,0 +1,30 @@
+<%= form_with(model: recinto, local: true) do |form| %>
+  <% if recinto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recinto.errors.count, "error") %> prohibited this recinto from being saved:</h2>
+
+      <ul>
+      <% recinto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :recinto_nombre, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :numero_maximo_votantes %>
+    <%= form.number_field :numero_maximo_votantes, id: :recinto_numero_maximo_votantes, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nombre_encargado %>
+    <%= form.text_field :nombre_encargado, id: :recinto_nombre_encargado, :class => "form-control" %>
+  </div>
+
+    <%= form.submit "Crear recinto" , :class=>"btn btn-success"%>
+<% end %>
