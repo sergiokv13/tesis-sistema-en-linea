@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "partidos_index_json" => "partidos#index_json"
   get "opcions_index_json" => "opcions#index_json"
   get "votacion_show_json" => "votacions#show_json"
+  get "deshabilitar_terminal" => "votacions#deshabilitar_terminal"
   root "welcome#index"
 
 end

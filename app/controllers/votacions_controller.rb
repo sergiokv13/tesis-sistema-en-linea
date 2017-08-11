@@ -53,6 +53,13 @@ class VotacionsController < ApplicationController
     @mesa.save
   end
 
+  def deshabilitar_terminal
+     @mesa = Mesa.where(:encargado_id => current_usuario.id).first
+     @mesa.terminal_habilitada = false
+     @mesa.save
+     redirect_to :root
+  end
+
   def visualizar_papeleta
     @votacion = Votacion.first
     @partidos = Partido.all
