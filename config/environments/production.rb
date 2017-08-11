@@ -4,7 +4,6 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.web_console.whiny_requests = false
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
   # Eager load code on boot. This eager loads most of Rails and
