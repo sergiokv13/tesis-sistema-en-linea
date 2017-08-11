@@ -6,7 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
 
   config.web_console.whiny_requests = false
-
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
   
   config.cache_classes = false
 

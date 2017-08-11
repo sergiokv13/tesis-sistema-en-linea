@@ -3,7 +3,7 @@
     connected: function() {},
     disconnected: function() {},
     received: function(data) {
-      if (true) {
+      if (data.id === $("#user_id").val()) {
         return location.reload();
       }
     }
