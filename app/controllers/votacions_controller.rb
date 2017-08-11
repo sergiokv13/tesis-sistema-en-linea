@@ -28,16 +28,8 @@ class VotacionsController < ApplicationController
 
   def habilitar_papeleta
     @mesa = Mesa.where(:encargado_id => current_usuario.id).first
-    url_terminal =  @mesa.direccion + "/habilitar_papeleta"
-
-    url = URI.parse(url_terminal)
-    req = Net::HTTP::Get.new(url.to_s)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
-    
+    @url_terminal =  @mesa.direccion + "/habilitar_papeleta"
     @mesa.cambiar_estado("votando")
-    redirect_to :root
   end
 
   def finalizar_voto
@@ -56,15 +48,9 @@ class VotacionsController < ApplicationController
   def habilitar_terminal
     @mesa = Mesa.where(:encargado_id => current_usuario.id).first
     @mesa.direccion = "http://" + params[:direccion].to_s
-      url_terminal =  @mesa.direccion + "/set_id_en_linea/"+ @mesa.id.to_s + "/" + current_usuario.id.to_s
-    url = URI.parse(url_terminal)
-    req = Net::HTTP::Get.new(url.to_s)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
+    @url_terminal =  @mesa.direccion + "/set_id_en_linea/"+ @mesa.id.to_s + "/" + current_usuario.id.to_s
     @mesa.terminal_habilitada = true
     @mesa.save
-    redirect_to :root
   end
 
   def visualizar_papeleta

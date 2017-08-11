@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	$(document).ready(function(){ 
+    jQuery.ajax({ 
+        type: "GET", 
+        url: "<%=@url_terminal%>",  
+        success:function(response){ 
+            document.location.href="/";
+        }, 
+     	error: function(xhr, textStatus, errorThrown) { 
+           	document.location.href="/";
+         } 
+    	}); 
+	}); 
+</script>
