@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   resources :opcions
   resources :partidos
   devise_for :usuarios
