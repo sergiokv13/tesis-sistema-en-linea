@@ -4,6 +4,10 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+
+  config.web_console.whiny_requests = false
+
+  
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -25,8 +29,6 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
-  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
