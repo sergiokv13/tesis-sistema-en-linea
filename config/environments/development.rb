@@ -7,7 +7,6 @@ Rails.application.configure do
 
   config.web_console.whiny_requests = false
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
-  config.action_cable.url = 'ws://104.131.40.8/cable'
   
   config.cache_classes = false
 
