@@ -26,7 +26,8 @@ class MesasController < ApplicationController
     mesa = Mesa.find(params[:id])
     nombre_separado = mesa.nombre_encargado.downcase.split(" ")
     email = nombre_separado.first + "." + nombre_separado.last + "mesa" + mesa.id.to_s + "@votacion.com"
-    password = (0...8).map { (65 + rand(26)).chr }.join
+    password = "HOLA"
+    #(0...8).map { (65 + rand(26)).chr }.join
     rol = "Encargado de mesa"
     password_reset = password
     if mesa.encargado == nil
