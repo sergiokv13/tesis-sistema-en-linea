@@ -5,7 +5,7 @@ class Partido < ApplicationRecord
   before_create :crear_direccion
 
     def crear_direccion
-      	cmd = "multichain-cli effex-chain getnewaddress"
+      	cmd = "multichain-cli cadena getnewaddress"
 		#Saves the result of command in res
 		res = %x[#{cmd}]
 		#Gets the new address
