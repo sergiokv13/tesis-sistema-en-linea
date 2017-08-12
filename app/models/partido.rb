@@ -9,7 +9,7 @@ class Partido < ApplicationRecord
 		#Saves the result of command in res
 		res = %x[#{cmd}]
 		#Gets the new address
-		self.direccion =  res.split('}')[1][2..-2]
+		self.direccion =  res
     end
 
 end
