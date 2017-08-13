@@ -11,6 +11,7 @@
       <th>Numero maximo votantes</th>
       <th>Numero maximo autenticaciones</th>
       <th>Tiempo maximo votos</th>
+      <th>Cantidad de balotas</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= votacion.numero_maximo_votantes %></td>
         <td><%= votacion.numero_maximo_autenticaciones %></td>
         <td><%= votacion.tiempo_maximo_votos %></td>
+        <td><%= votacion.balotas %></td>
         <td><%= link_to 'Show', votacion %></td>
         <td><%= link_to 'Edit', edit_votacion_path(votacion) %></td>
         <td><%= link_to 'Destroy', votacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>

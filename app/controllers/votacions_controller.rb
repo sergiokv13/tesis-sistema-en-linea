@@ -114,6 +114,6 @@ class VotacionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def votacion_params
-      params.require(:votacion).permit(:razon, :inicio, :finalizacion, :numero_maximo_votantes, :numero_maximo_autenticaciones, :tiempo_maximo_votos)
+      params.require(:votacion).permit(:razon, :inicio, :finalizacion, :numero_maximo_votantes, :numero_maximo_autenticaciones, :tiempo_maximo_votos, :balotas)
     end
 end

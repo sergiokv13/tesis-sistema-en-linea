@@ -26,20 +26,25 @@
     <%= form.datetime_select :finalizacion, id: :votacion_finalizacion , :class=>"form-control"%>
   </div>
 
-  <div class="form-group col-lg-4">
+  <div class="form-group col-lg-3">
     <%= form.label :numero_maximo_de_votantes %>
     <%= form.number_field :numero_maximo_votantes, id: :votacion_numero_maximo_votantes, :class=>"form-control" %>
   </div>
 
-  <div class="form-group col-lg-4">
+  <div class="form-group col-lg-3">
     <%= form.label :numero_maximo_de_autenticaciones%>
     <%= form.number_field :numero_maximo_autenticaciones, id: :votacion_numero_maximo_autenticaciones, :class=>"form-control" %>
   </div>
 
-  <div class="form-group col-lg-4">
+  <div class="form-group col-lg-3">
     <%= form.label :tiempo_maximo_de_voto_en_segundos %>
     <%= form.number_field :tiempo_maximo_votos, id: :votacion_tiempo_maximo_votos, :class=>"form-control" %>
   </div>
 
+
+  <div class="form-group col-lg-3">
+    <%= form.label :cantidad_de_balotas %>
+    <%= form.number_field :balotas, id: :votacion_balotas, :class=>"form-control" %>
+  </div>
     <%= form.submit "Crear votación", :class=> "btn btn-success" %>
 <% end %>

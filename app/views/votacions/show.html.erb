@@ -30,6 +30,11 @@
   <%= @votacion.tiempo_maximo_votos %>
 </p>
 
+<p>
+  <strong>Cantidad de balotas:</strong>
+  <%= @votacion.balotas %>
+</p>
+
 <% @votacion.departamentos.each do |departamento| %>
   <a href="/departamentos/<%=departamento.id%>"> <%=departamento.nombre%> - <%=departamento.numero_maximo_votantes%> </a> <br>
 <% end %>

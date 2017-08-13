@@ -62,6 +62,10 @@ class MesasController < ApplicationController
     end
   end
 
+  def informar_voto
+    Mesa.registrar_voto(params[id])
+  end
+
   # PATCH/PUT /mesas/1
   # PATCH/PUT /mesas/1.json
   def update
