@@ -4,6 +4,7 @@ class CreateOpcions < ActiveRecord::Migration[5.1]
       t.text :informacion
       t.references :partido, foreign_key: true
       t.string :nombre
+      t.string :direccion
       t.timestamps
     end
   end

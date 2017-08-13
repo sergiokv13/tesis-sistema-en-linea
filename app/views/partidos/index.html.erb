@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
       <th>Nombre</th>
-      <th>Direccion Blockchain</th>
       <th colspan="2">Colores</th>
       <th>Información</th>
       <th >Acciones</th>
@@ -16,7 +15,6 @@
     <% @partidos.each do |partido| %>
       <tr>
         <td><%= partido.nombre %></td>
-        <td><%= partido.direccion %></td>
         <td colspan="1" style="background-color: <%=partido.color%>;"></td>
         <td colspan="1" style="background-color: <%=partido.color_secundario%>;"></td>
         <td><%= partido.informacion %></td>

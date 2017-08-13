@@ -36,12 +36,12 @@ Recinto.create(nombre:"reSC1",numero_maximo_votantes: 0, nombre_encargado: "Jhon
 Recinto.create(nombre:"reTRJ1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",sector_id:4)
 
 
-Mesa.create(nombre:"mesaRec1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:1)
+Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:1)
 
-Mesa.create(nombre:"mesaRec2",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:2)
+Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:2)
 
-Mesa.create(nombre:"mesaRec3",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:3)
-Mesa.create(nombre:"mesaRec4",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:4)
+Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:3)
+Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:4)
 
 
 Partido.create(nombre:"Partido1",informacion:"Este es el partido #1",votacion_id:1, color:"#ff3333", color_secundario:"#80ffff")

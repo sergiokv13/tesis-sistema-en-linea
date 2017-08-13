@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Nombre</th>
+      <th>Direccion en Blockchain</th>
       <th>Información</th>
       <th>Partido</th>
       <th>Acciones</th>
@@ -16,6 +17,7 @@
     <% @opcions.each do |opcion| %>
       <tr>
         <td><%= opcion.nombre %></td>
+        <td><%= opcion.direccion %></td>
         <td><%= opcion.informacion %></td>
         <td><%= opcion.partido.nombre %></td>
         <td>

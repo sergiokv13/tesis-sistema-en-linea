@@ -94,6 +94,6 @@ class MesasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mesa_params
-      params.require(:mesa).permit(:nombre, :numero_maximo_votantes, :direccion_blockchain, :recinto_id, :nombre_encargado)
+      params.require(:mesa).permit(:numero_maximo_votantes, :direccion_blockchain, :recinto_id, :nombre_encargado)
     end
 end
