@@ -19,7 +19,7 @@
 		<a href="/recinto/mesas/<%=@recinto.id %>" > Mesas para tu recinto</a>
 	<% end %>
 	<% if current_usuario.rol == "Encargado de mesa"%>
-		Usted es el encargado de la mesa <%=@mesa.nombre %><br>
+		Usted es el encargado de la mesa con id <%=@mesa.id %><br>
 		<% if @mesa.estado == "esperando" %>
 			<% if !@mesa.terminal_habilitada %>
 				<%= form_tag("/habilitar_terminal", method: "post") do %>
