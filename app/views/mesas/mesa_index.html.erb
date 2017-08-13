@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Nombre</th>
       <th>Numero maximo votantes</th>
       <th>Nombre del encargado</th>
       <th>Cuenta de acceso:</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @mesas.each do |mesa| %>
       <tr>
-        <td><%= mesa.nombre %></td>
         <td><%= mesa.numero_maximo_votantes %></td>
         <td><%= mesa.nombre_encargado %></td>
         <td>
