@@ -8,7 +8,8 @@ class Votacion < ApplicationRecord
      	cmd = "multichain-cli cadena listpermissions issue"
 		res = %x[#{cmd}]
 		json_obj = res.delete("/n").delete(" ")
-		direccion_principal = json_obj["address"].to_s
+		new_obj = JSON.parse json_obj
+		direccion_principal = new_obj["address"].to_s
     end
 
     def set_asset
