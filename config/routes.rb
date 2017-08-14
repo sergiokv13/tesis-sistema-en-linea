@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get "opcions_index_json" => "opcions#index_json"
   get "votacion_show_json" => "votacions#show_json"
   get "deshabilitar_terminal" => "votacions#deshabilitar_terminal"
-  get "/informar_direccion" => "mesas#informar_direccion"
+  get "/informar_direccion/:direccion" => "mesas#informar_direccion"
   root "welcome#index"
 
 end

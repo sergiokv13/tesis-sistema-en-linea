@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20170810101859) do
   end
 
   create_table "mesas", force: :cascade do |t|
-    t.string "nombre"
     t.integer "numero_maximo_votantes"
     t.string "direccion_blockchain"
     t.integer "recinto_id"
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170810101859) do
     t.text "informacion"
     t.integer "partido_id"
     t.string "nombre"
+    t.string "direccion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["partido_id"], name: "index_opcions_on_partido_id"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 20170810101859) do
     t.string "etapa"
     t.boolean "informacion_conluida"
     t.boolean "departamentos_concluidos"
+    t.integer "balotas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
