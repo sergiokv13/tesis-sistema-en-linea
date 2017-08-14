@@ -56,6 +56,7 @@ class VotacionsController < ApplicationController
   def deshabilitar_terminal
      @mesa = Mesa.where(:encargado_id => current_usuario.id).first
      @mesa.terminal_habilitada = false
+     @mesa.estado == "esperando"
      @mesa.save
      redirect_to :root
   end
