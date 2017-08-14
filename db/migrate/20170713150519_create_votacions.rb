@@ -11,6 +11,7 @@ class CreateVotacions < ActiveRecord::Migration[5.1]
       t.boolean :informacion_conluida
       t.boolean :departamentos_concluidos
       t.integer :balotas
+      t.string :direccion_principal
       t.timestamps
     end
   end
