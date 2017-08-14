@@ -13,7 +13,7 @@ class Votacion < ApplicationRecord
     end
 
     def set_asset
-    	cmd = "multichain-cli cadena issue" + direccion_principal.to_s + " balotas " + self.numero_maximo_votantes.to_s + "1"
+    	cmd = "multichain-cli cadena issue " + direccion_principal.to_s + " balotas " + self.numero_maximo_votantes.to_s
 		res = %x[#{cmd}]
     end
 end
