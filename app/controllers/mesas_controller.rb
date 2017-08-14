@@ -1,5 +1,5 @@
 class MesasController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:informar_direccion]
   before_action :set_mesa, only: [:show, :edit, :update, :destroy]
 
   # GET /mesas
