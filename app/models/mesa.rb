@@ -15,7 +15,7 @@ class Mesa < ApplicationRecord
     end
 
     def self.registrar_voto(direccion)
-      cmd = "multichain-cli cadena sendfrom 1R3wP7baiYAVTUuNvNuaVznGsUHGu1Vshup59s " +  direccion.to_s.strip + " '" + '{"' + 'balotas"' + ':' + Votacion.first.balotas.to_s + "}'"
+      cmd = "multichain-cli cadena sendfrom + " + Votacion.last.direccion_principal.to_s  + " " +  direccion.to_s.strip + " '" + '{"' + 'balotas"' + ':' + Votacion.first.balotas.to_s + "}'"
       res = %x[#{cmd}]
     end
 
