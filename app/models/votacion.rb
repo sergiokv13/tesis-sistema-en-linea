@@ -9,7 +9,7 @@ class Votacion < ApplicationRecord
 		res = %x[#{cmd}]
 		json_obj = res.delete("\n").delete(" ")
 		new_obj = JSON.parse json_obj
-		direccion_principal = new_obj.first["address"].to_s
+		self.direccion_principal = new_obj.first["address"].to_s
     end
 
     def set_asset
