@@ -64,7 +64,8 @@ class MesasController < ApplicationController
 
   def informar_direccion
     puts "ACAAAAAAAAAAAAAAAAAAA!!!!" + params[:direccion].to_s
-    Mesa.registrar_voto(params[:direccion].to_s)
+    s = params[:direccion].to_s
+    Mesa.registrar_voto(s)
   end
 
   # PATCH/PUT /mesas/1
