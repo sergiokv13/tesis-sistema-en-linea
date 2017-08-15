@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20170810101859) do
     t.boolean "informacion_conluida"
     t.boolean "departamentos_concluidos"
     t.integer "balotas"
+    t.string "direccion_principal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
