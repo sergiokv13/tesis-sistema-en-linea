@@ -16,4 +16,17 @@ class Votacion < ApplicationRecord
     	cmd = "multichain-cli cadena issue " + direccion_principal.to_s + " balotas " + self.numero_maximo_votantes.to_s
 		res = %x[#{cmd}]
     end
+
+    def self.get_reporte_total
+    	cmd = "multichain-cli cadena getmultibalances"
+    	res = %x[#{cmd}]
+		new_obj = JSON.parse res
+		resultados = Hash.new
+		Opcion.all.each do |opcion|
+			dir = opcion.direccion
+			dir = dir.strip
+			resultados[dir] = new_obj[dir].first["qty"]
+		end
+    	return resultados
+    end
 end
