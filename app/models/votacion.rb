@@ -25,7 +25,7 @@ class Votacion < ApplicationRecord
 		Opcion.all.each do |opcion|
 			dir = opcion.direccion
 			dir = dir.strip
-			if !resultados[dir].nil?
+			if !resultados[dir].empty?
 				resultados[dir] = new_obj[dir].first["qty"]
 			end
 		end
