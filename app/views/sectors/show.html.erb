@@ -15,6 +15,5 @@
   <%= @sector.departamento %>
 </p>
 
-<%= link_to 'Editar', edit_sector_path(@sector) %> |
-<%= link_to 'Atras', "/departamento/sectores/" +  @sector.id%>
->
+<%= link_to 'Editar', edit_sector_path(@sector) %> | 
+<a href="/departamento/sectores/<%=@sector.id%>">Atras</a>

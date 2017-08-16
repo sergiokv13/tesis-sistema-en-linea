@@ -3,4 +3,4 @@
 <%= render 'form', sector: @sector %>
 
 <%= link_to 'Mostrar', @sector %> |
-<%= link_to 'Atras', "/departamento/sectores/" +  @sector.id%>
+<a href="/departamento/sectores/<%=@sector.id%>">Atras</a>
