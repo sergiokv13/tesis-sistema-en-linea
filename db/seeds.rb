@@ -9,7 +9,7 @@
 Usuario.create(email:"encargado@votacion.com", password:'encargado', rol: 'Encargado de votacion')
 
 
-Votacion.create(razon:"Votación del presidente",numero_maximo_votantes: 100, tiempo_maximo_votos: 0, inicio: DateTime.now, finalizacion: DateTime.now, balotas: 2)
+Votacion.create(razon:"Votación del presidente",numero_maximo_votantes: 100, inicio: DateTime.now, finalizacion: DateTime.now, balotas: 2)
 
 Departamento.create(nombre:"Cochabamba", nombre_encargado: "Sergio Koller Vargas",votacion_id:1, )
 Departamento.create(nombre:"La Paz", nombre_encargado: "Carolina Cortez Freudenthal",votacion_id:1)

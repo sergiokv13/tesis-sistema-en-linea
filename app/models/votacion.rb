@@ -10,6 +10,7 @@ class Votacion < ApplicationRecord
 		json_obj = res.delete("\n").delete(" ")
 		new_obj = JSON.parse json_obj
 		self.direccion_principal = new_obj.first["address"].to_s
+        self.estado = "Previo a la votación"
     end
 
     def set_asset
