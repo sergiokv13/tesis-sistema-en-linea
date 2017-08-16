@@ -11,37 +11,37 @@ Usuario.create(email:"encargado@votacion.com", password:'encargado', rol: 'Encar
 
 Votacion.create(razon:"Votación del presidente",numero_maximo_votantes: 100, tiempo_maximo_votos: 0, inicio: DateTime.now, finalizacion: DateTime.now, balotas: 2)
 
-Departamento.create(nombre:"Cochabamba",numero_maximo_votantes: 0, nombre_encargado: "Sergio Koller Vargas",votacion_id:1, )
-Departamento.create(nombre:"La Paz",numero_maximo_votantes: 0, nombre_encargado: "Carolina Cortez Freudenthal",votacion_id:1)
-Departamento.create(nombre:"Santa Cruz",numero_maximo_votantes: 0, nombre_encargado: "Gonzalo Vilar Quiroga",votacion_id:1)
-Departamento.create(nombre:"Tarija",numero_maximo_votantes: 0, nombre_encargado: "Santiago Quiroga Turdera",votacion_id:1)
+Departamento.create(nombre:"Cochabamba", nombre_encargado: "Sergio Koller Vargas",votacion_id:1, )
+Departamento.create(nombre:"La Paz", nombre_encargado: "Carolina Cortez Freudenthal",votacion_id:1)
+Departamento.create(nombre:"Santa Cruz", nombre_encargado: "Gonzalo Vilar Quiroga",votacion_id:1)
+Departamento.create(nombre:"Tarija", nombre_encargado: "Santiago Quiroga Turdera",votacion_id:1)
 
 
-Sector.create(nombre:"cbbas1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",departamento_id:1)
+Sector.create(nombre:"cbbas1", nombre_encargado: "Jhon Doe Lero",departamento_id:1)
 
-Sector.create(nombre:"LP1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",departamento_id:2)
+Sector.create(nombre:"LP1", nombre_encargado: "Jhon Doe Lero",departamento_id:2)
 
-Sector.create(nombre:"SC1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",departamento_id:3)
+Sector.create(nombre:"SC1", nombre_encargado: "Jhon Doe Lero",departamento_id:3)
 
-Sector.create(nombre:"TRJ1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",departamento_id:4)
-
-
-
-Recinto.create(nombre:"recbbas1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",sector_id:1)
-
-Recinto.create(nombre:"reLP1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",sector_id:2)
-
-Recinto.create(nombre:"reSC1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",sector_id:3)
-
-Recinto.create(nombre:"reTRJ1",numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",sector_id:4)
+Sector.create(nombre:"TRJ1", nombre_encargado: "Jhon Doe Lero",departamento_id:4)
 
 
-Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:1)
 
-Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:2)
+Recinto.create(nombre:"recbbas1", nombre_encargado: "Jhon Doe Lero",sector_id:1)
 
-Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:3)
-Mesa.create(numero_maximo_votantes: 0, nombre_encargado: "Jhon Doe Lero",recinto_id:4)
+Recinto.create(nombre:"reLP1", nombre_encargado: "Jhon Doe Lero",sector_id:2)
+
+Recinto.create(nombre:"reSC1", nombre_encargado: "Jhon Doe Lero",sector_id:3)
+
+Recinto.create(nombre:"reTRJ1", nombre_encargado: "Jhon Doe Lero",sector_id:4)
+
+
+Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:1)
+
+Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:2)
+
+Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:3)
+Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:4)
 
 
 Partido.create(nombre:"Partido1",informacion:"Este es el partido #1",votacion_id:1, color:"#ff3333", color_secundario:"#80ffff")
