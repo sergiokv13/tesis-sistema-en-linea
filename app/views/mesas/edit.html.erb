@@ -2,5 +2,6 @@
 
 <%= render 'form', mesa: @mesa %>
 
-<%= link_to 'Mostrar', @mesa %> |
-<%= link_to 'Atras', mesas_path %>
+<%= link_to 'Mostrar', @mesa %> 
+|<a href="/recinto/mesas/<%=@mesa.recinto_id%>">Atras</a>
+
