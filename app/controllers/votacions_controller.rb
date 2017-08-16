@@ -14,6 +14,20 @@ class VotacionsController < ApplicationController
   def show
   end
 
+  def iniciar_votacion
+    @votacion = Votacion.first
+    @votacion.estado = "Durante la votación"
+    @votacion.save
+    redirect_to :root
+  end
+
+  def finalizar_votacion
+    @votacion = Votacion.first
+    @votacion.estado = "Votación finalizada"
+    @votacion.save
+    redirect_to :root
+  end
+
   def show_json
     @votacion = Votacion.first
     render :json => @votacion
