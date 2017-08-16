@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Numero maximo votantes</th>
       <th>Nombre del encargado</th>
       <th>Cuenta de acceso:</th>
       <th>Acciones</th>
@@ -17,7 +16,6 @@
     <% @sectors.each do |sector| %>
       <tr>
         <td><%= sector.nombre %></td>
-        <td><%= sector.numero_maximo_votantes %></td>
         <td><%= sector.nombre_encargado %></td>
         <td>
           <% if sector.encargado != nil %>
