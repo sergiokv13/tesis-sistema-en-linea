@@ -69,6 +69,7 @@ class Votacion < ApplicationRecord
     	sectores = Votacion.get_reporte_sectores
     	departamentos = Hash.new
     	sectores.keys.each do |id_sector|
+            id_sector = Sector.where(:nombre => id_sector).first.id
     		sector = Sector.find(id_sector)
     		id_departamento = sector.departamento_id
             id_departamento = Departamento.find(id_departamento).nombre
