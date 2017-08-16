@@ -8,7 +8,7 @@
 			<a href="/iniciar_votacion">Iniciar votación manualmente</a>
 		<% end %>
 		<% if @votacion.etapa == "Durante la votación"%>
-			<a href="/iniciar_votacion">Finalizar votación manualmente</a>
+			<a href="/finalizar_votacion">Finalizar votación manualmente</a>
 		<% end %>
 	<% end %>
 	<% if current_usuario.rol == "Encargado de departamento"%>
