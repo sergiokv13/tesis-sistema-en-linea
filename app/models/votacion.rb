@@ -56,6 +56,7 @@ class Votacion < ApplicationRecord
      	mesas.keys.each do |id_mesa|
      		mesa = Mesa.find(id_mesa)
      		id_sector = mesa.recinto.sector_id
+            id_sector = Sector.find(id_sector).nombre
      		if sectores[id_sector] == nil then sectores[id_sector] = Hash.new end
      		mesas[id_mesa].keys.each do |partido|
      			if sectores[id_sector][partido] == nil then sectores[id_sector][partido]= mesas[id_mesa][partido] else sectores[id_sector][partido.strip]+=mesas[id_mesa][partido] end 
@@ -70,6 +71,7 @@ class Votacion < ApplicationRecord
     	sectores.keys.each do |id_sector|
     		sector = Sector.find(id_sector)
     		id_departamento = sector.departamento_id
+            id_departamento = Departamento.find(id_departamento).nombre
     		if departamentos[id_departamento] == nil then departamentos[id_departamento] = Hash.new end
     		sectores[id_sector].keys.each do |partido|
     			if departamentos[id_departamento][partido] == nil then departamentos[id_departamento][partido] = sectores[id_sector][partido] else departamentos[id_departamento][partido.strip]+=sectores[id_sector][partido] end 
