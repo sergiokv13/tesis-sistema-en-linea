@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get "/reporte_parcial_departamentos" => "reportes#get_reporte_departamentos"
   get "/reporte_parcial_sectores"  => "reportes#get_reporte_sectores"
   get "/iniciar_votacion" => "votacions#iniciar_votacion"
-  get "/finalizar_votacion" => "votacions#iniciar_votacion"
+  get "/finalizar_votacion" => "votacions#finalizar_votacion"
   root "welcome#index"
 
 end

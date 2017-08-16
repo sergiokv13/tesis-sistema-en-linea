@@ -1,10 +1,9 @@
-<h2>Acciones</h2>
+<h2>Acciones por rol</h2>
 <% if @votacion %>
 	<% if current_usuario.rol == "Encargado de votacion"%>
 		<a href="/departamentos" > Configuración de departamentos</a><br>
 		<a href="/partidos" > Configuración de partidos</a><br>
 		<a href="/opcions" > Configuración de opciones de voto</a><br>
-		<a href="/visualizar_papeleta" target="_blank"> Visualizar papeleta de voto</a><br>
 		<% if @votacion.etapa == "Previo a la votación"%>
 			<a href="/iniciar_votacion">Iniciar votación manualmente</a>
 		<% end %>
@@ -41,4 +40,10 @@
 		<% end %>
 	<% end %>
 <% end %>
+
+<h2>Acciones globales</h2>
+<a href="/visualizar_papeleta" target="_blank"> Visualizar papeleta de voto</a><br>
+<a href="/sectors" target="_blank"> Ver todos los sectores</a><br>
+<a href="/recintos" target="_blank"> Ver todos los recintos</a><br>
+<a href="/mesas" target="_blank"> Ver todas las mesas</a><br>
 

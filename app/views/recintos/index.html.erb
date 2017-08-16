@@ -5,26 +5,26 @@
 <table>
   <thead>
     <tr>
+      <th>id</th>
       <th>Nombre</th>
-      <th>Numero maximo votantes</th>
-      <th>Sector</th>
-      <th colspan="3"></th>
+      <th>Pertenece al sector:</th>
+      <th>Pertenece al departamento:</th>
+      <th>El encargado es:</th>
     </tr>
   </thead>
 
   <tbody>
     <% @recintos.each do |recinto| %>
       <tr>
+        <td><%= recinto.id %></td>
         <td><%= recinto.nombre %></td>
-        <td><%= recinto.numero_maximo_votantes %></td>
-        <td><%= recinto.sector %></td>
-        <td><%= link_to 'Show', recinto %></td>
-        <td><%= link_to 'Edit', edit_recinto_path(recinto) %></td>
+        <td><%= recinto.sector.nombre %></td>
+        <td><%= recinto.sector.departamento.nombre %></td>
+        <td><%= recinto.encargado.nombre %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Recinto', new_recinto_path %>
+
