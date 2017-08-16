@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Numero maximo votantes</th>
-      <th>Direccion blockchain</th>
       <th>Recinto</th>
       <th colspan="3"></th>
     </tr>
@@ -16,11 +15,9 @@
     <% @mesas.each do |mesa| %>
       <tr>
         <td><%= mesa.numero_maximo_votantes %></td>
-        <td><%= mesa.direccion_blockchain %></td>
         <td><%= mesa.recinto %></td>
-        <td><%= link_to 'Show', mesa %></td>
-        <td><%= link_to 'Edit', edit_mesa_path(mesa) %></td>
-        <td><%= link_to 'Destroy', mesa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', mesa %></td>
+        <td><%= link_to 'Editar', edit_mesa_path(mesa) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Mesa', new_mesa_path %>
+<%= link_to 'Nueva mesa', new_mesa_path %>

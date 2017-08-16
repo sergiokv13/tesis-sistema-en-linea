@@ -26,6 +26,6 @@
     <%= form.collection_select :partido_id, Partido.all, :id, :nombre %>
   </div>
 
-    <%= form.submit %>
+     <%= form.submit "Crear opcion de voto", :class => "btn btn-sucess" %>
 
 <% end %>
