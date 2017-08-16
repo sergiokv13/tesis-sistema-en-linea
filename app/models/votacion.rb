@@ -66,10 +66,21 @@ class Votacion < ApplicationRecord
      end
 
     def self.get_reporte_departamentos
-    	sectores = Votacion.get_reporte_sectores
+    
+        mesas = Votacion.get_reporte_mesas
+        sectores = Hash.new
+        mesas.keys.each do |id_mesa|
+            mesa = Mesa.find(id_mesa)
+            id_sector = mesa.recinto.sector_id
+            if sectores[id_sector] == nil then sectores[id_sector] = Hash.new end
+            mesas[id_mesa].keys.each do |partido|
+                if sectores[id_sector][partido] == nil then sectores[id_sector][partido]= mesas[id_mesa][partido] else sectores[id_sector][partido.strip]+=mesas[id_mesa][partido] end 
+            end
+        end
+
+
     	departamentos = Hash.new
     	sectores.keys.each do |id_sector|
-            id_sector = Sector.where(:nombre => id_sector).first.id
     		sector = Sector.find(id_sector)
     		id_departamento = sector.departamento_id
             id_departamento = Departamento.find(id_departamento).nombre
