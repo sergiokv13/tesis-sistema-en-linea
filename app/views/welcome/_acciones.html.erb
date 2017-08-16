@@ -25,18 +25,22 @@
 	<% end %>
 	<% if current_usuario.rol == "Encargado de mesa"%>
 		Usted es el encargado de la mesa con id <%=@mesa.id %><br>
-		<%  if @mesa.terminal_habilitada %>
-			<% if @mesa.estado == "esperando" %>
-				<a href="/habilitar_papeleta" >Habilitar papeleta virtual en mesa <%=@mesa.id%></a>
+		<% if @votacion.etapa = "Durante la votación" %>
+			<%  if @mesa.terminal_habilitada %>
+				<% if @mesa.estado == "esperando" %>
+					<a href="/habilitar_papeleta" >Habilitar papeleta virtual en mesa <%=@mesa.id%></a>
+				<% else %>
+					Hay una votacion en curso en mesa <%=@mesa.id%>
+				<% end %>
 			<% else %>
-				Hay una votacion en curso en mesa <%=@mesa.id%>
+				<%= form_tag("/habilitar_terminal", method: "post") do %>
+				  <%= label_tag(:direccion, "Direccion:") %>
+				  <%= text_field_tag(:direccion) %>
+				  <%= submit_tag("Habilitar terminal"), :class => "btn btn-sucess" %>
+				<% end %>
 			<% end %>
 		<% else %>
-			<%= form_tag("/habilitar_terminal", method: "post") do %>
-			  <%= label_tag(:direccion, "Direccion:") %>
-			  <%= text_field_tag(:direccion) %>
-			  <%= submit_tag("Habilitar terminal") %>
-			<% end %>
+			La mesa se encuentra deshabilitada
 		<% end %>
 	<% end %>
 <% end %>
