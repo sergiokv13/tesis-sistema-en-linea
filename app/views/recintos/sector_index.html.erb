@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+ 
 
 <h1>recintos</h1>
 
@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Numero maximo votantes</th>
       <th>Nombre del encargado</th>
       <th>Cuenta de acceso:</th>
       <th>Acciones</th>
@@ -17,7 +16,6 @@
     <% @recintos.each do |recinto| %>
       <tr>
         <td><%= recinto.nombre %></td>
-        <td><%= recinto.numero_maximo_votantes %></td>
         <td><%= recinto.nombre_encargado %></td>
         <td>
           <% if recinto.encargado != nil %>

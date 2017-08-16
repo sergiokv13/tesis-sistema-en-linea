@@ -1,11 +1,10 @@
-<p id="notice"><%= notice %></p>
+ 
 
 <h1>Mesas</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Numero maximo votantes</th>
       <th>Nombre del encargado</th>
       <th>Cuenta de acceso:</th>
       <th>Acciones</th>
@@ -15,7 +14,6 @@
   <tbody>
     <% @mesas.each do |mesa| %>
       <tr>
-        <td><%= mesa.numero_maximo_votantes %></td>
         <td><%= mesa.nombre_encargado %></td>
         <td>
           <% if mesa.encargado != nil %>
