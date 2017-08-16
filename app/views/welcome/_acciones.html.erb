@@ -5,10 +5,10 @@
 		<a href="/partidos" > Configuración de partidos</a><br>
 		<a href="/opcions" > Configuración de opciones de voto</a><br>
 		<a href="/visualizar_papeleta" target="_blank"> Visualizar papeleta de voto</a><br>
-		<% if @votacion.estado == "Previo a la votación"%>
+		<% if @votacion.etapa == "Previo a la votación"%>
 			<a href="/iniciar_votacion">Iniciar votación manualmente</a>
 		<% end %>
-		<% if @votacion.estado == "Durante la votación"%>
+		<% if @votacion.etapa == "Durante la votación"%>
 			<a href="/iniciar_votacion">Finalizar votación manualmente</a>
 		<% end %>
 	<% end %>

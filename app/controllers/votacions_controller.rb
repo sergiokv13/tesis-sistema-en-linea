@@ -16,14 +16,14 @@ class VotacionsController < ApplicationController
 
   def iniciar_votacion
     @votacion = Votacion.first
-    @votacion.estado = "Durante la votación"
+    @votacion.etapa = "Durante la votación"
     @votacion.save
     redirect_to :root
   end
 
   def finalizar_votacion
     @votacion = Votacion.first
-    @votacion.estado = "Votación finalizada"
+    @votacion.etapa = "Votación finalizada"
     @votacion.save
     redirect_to :root
   end
