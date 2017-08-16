@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20170810101859) do
 
   create_table "departamentos", force: :cascade do |t|
     t.string "nombre"
-    t.integer "numero_maximo_votantes"
     t.integer "votacion_id"
     t.string "nombre_encargado"
     t.integer "encargado_id"
@@ -25,8 +24,6 @@ ActiveRecord::Schema.define(version: 20170810101859) do
   end
 
   create_table "mesas", force: :cascade do |t|
-    t.integer "numero_maximo_votantes"
-    t.string "direccion_blockchain"
     t.integer "recinto_id"
     t.string "nombre_encargado"
     t.string "estado"
@@ -74,7 +71,6 @@ ActiveRecord::Schema.define(version: 20170810101859) do
 
   create_table "sectors", force: :cascade do |t|
     t.string "nombre"
-    t.integer "numero_maximo_votantes"
     t.integer "departamento_id"
     t.string "nombre_encargado"
     t.integer "encargado_id"
@@ -108,11 +104,8 @@ ActiveRecord::Schema.define(version: 20170810101859) do
     t.datetime "inicio"
     t.datetime "finalizacion"
     t.integer "numero_maximo_votantes"
-    t.integer "numero_maximo_autenticaciones"
-    t.integer "tiempo_maximo_votos"
     t.string "etapa"
     t.boolean "informacion_conluida"
-    t.boolean "departamentos_concluidos"
     t.integer "balotas"
     t.string "direccion_principal"
     t.datetime "created_at", null: false
