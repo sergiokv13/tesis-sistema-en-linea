@@ -25,7 +25,7 @@
 	<% end %>
 	<% if current_usuario.rol == "Encargado de mesa"%>
 		Usted es el encargado de la mesa con id <%=@mesa.id %><br>
-		<% if @votacion.etapa = "Durante la votación" %>
+		<% if @votacion.etapa == "Durante la votación" %>
 			<%  if @mesa.terminal_habilitada %>
 				<% if @mesa.estado == "esperando" %>
 					<a href="/habilitar_papeleta" >Habilitar papeleta virtual en mesa <%=@mesa.id%></a>
@@ -36,7 +36,7 @@
 				<%= form_tag("/habilitar_terminal", method: "post") do %>
 				  <%= label_tag(:direccion, "Direccion:") %>
 				  <%= text_field_tag(:direccion) %>
-				  <%= submit_tag("Habilitar terminal"), :class => "btn btn-sucess" %>
+				  <%= submit_tag("Habilitar terminal",:class=>"btn btn-success") %>
 				<% end %>
 			<% end %>
 		<% else %>
