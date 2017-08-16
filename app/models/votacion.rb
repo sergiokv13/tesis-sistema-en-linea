@@ -24,6 +24,7 @@ class Votacion < ApplicationRecord
 		resultados = Hash.new
 		Opcion.all.each do |opcion|
 			dir = opcion.direccion
+			dir = dir.strip
 			if new_obj[dir] != nil
 				resultados[dir] = new_obj[dir].first["qty"]
 			end
@@ -73,8 +74,8 @@ class Votacion < ApplicationRecord
     		sectores[id_sector].keys.each do |partido|
     			if departamentos[id_departamento][partido] == nil then departamentos[id_departamento][partido] = sectores[id_sector][partido] else departamentos[id_departamento][partido.strip]+=sectores[id_sector][partido] end 
     		end
-
     	end
+    	return departamentos
     end
 
 

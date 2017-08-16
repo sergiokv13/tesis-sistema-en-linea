@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   get "deshabilitar_terminal" => "votacions#deshabilitar_terminal"
   get "/informar_direccion/:direccion" => "mesas#informar_direccion"
   get "/reporte_total" => "reportes#get_reporte_total"
-  get "/reporte_parcial_departamento" => "reportes#get_reporte_departamentos"
-  get "/reporte_parcial_sector"  => "reportes#get_reporte_sectores"
+  get "/reporte_parcial_departamentos" => "reportes#get_reporte_departamentos"
+  get "/reporte_parcial_sectores"  => "reportes#get_reporte_sectores"
   root "welcome#index"
 
 end

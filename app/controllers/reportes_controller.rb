@@ -4,12 +4,12 @@ class ReportesController < ApplicationController
 		render :json => @resultados
 	end
 
-	def get_reporte_departamento
+	def get_reporte_departamentos
 		@resultados = Votacion.get_reporte_departamentos
 		render :json => @resultados
 	end
 
-	def get_reporte_sector
+	def get_reporte_sectores
 		@resultados = Votacion.get_reporte_sectores
 		render :json => @resultados
 	end
