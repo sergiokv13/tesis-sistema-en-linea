@@ -9,53 +9,48 @@
 Usuario.create(email:"encargado@votacion.com", password:'encargado', rol: 'Encargado de votacion')
 
 
-Votacion.create(razon:"Votación del presidente",numero_maximo_votantes: 100, inicio: DateTime.now, finalizacion: DateTime.now, balotas: 2)
+Votacion.create(razon:"Votación para presidente",numero_maximo_votantes: 100, inicio: DateTime.now, finalizacion: DateTime.now, balotas: 1)
 
 Departamento.create(nombre:"Cochabamba", nombre_encargado: "Sergio Koller Vargas",votacion_id:1, )
-Departamento.create(nombre:"La Paz", nombre_encargado: "Carolina Cortez Freudenthal",votacion_id:1)
-Departamento.create(nombre:"Santa Cruz", nombre_encargado: "Gonzalo Vilar Quiroga",votacion_id:1)
-Departamento.create(nombre:"Tarija", nombre_encargado: "Santiago Quiroga Turdera",votacion_id:1)
+#Departamento.create(nombre:"La Paz", nombre_encargado: "Carolina Cortez Freudenthal",votacion_id:1)
 
 
-Sector.create(nombre:"cbbas1", nombre_encargado: "Jhon Doe Lero",departamento_id:1)
+Sector.create(nombre:"cbbas1", nombre_encargado: "Carlos Vargas",departamento_id:1)
 
-Sector.create(nombre:"LP1", nombre_encargado: "Jhon Doe Lero",departamento_id:2)
+#Sector.create(nombre:"LP1", nombre_encargado: "Jhon Doe Lero",departamento_id:2)
 
-Sector.create(nombre:"SC1", nombre_encargado: "Jhon Doe Lero",departamento_id:3)
+#Sector.create(nombre:"SC1", nombre_encargado: "Jhon Doe Lero",departamento_id:3)
 
-Sector.create(nombre:"TRJ1", nombre_encargado: "Jhon Doe Lero",departamento_id:4)
+#Sector.create(nombre:"TRJ1", nombre_encargado: "Jhon Doe Lero",departamento_id:4)
 
 
 
-Recinto.create(nombre:"recbbas1", nombre_encargado: "Jhon Doe Lero",sector_id:1)
+Recinto.create(nombre:"recbbas1", nombre_encargado: "Pepe Palotes",sector_id:1)
 
-Recinto.create(nombre:"reLP1", nombre_encargado: "Jhon Doe Lero",sector_id:2)
+#Recinto.create(nombre:"reLP1", nombre_encargado: "Jhon Doe Lero",sector_id:2)
 
-Recinto.create(nombre:"reSC1", nombre_encargado: "Jhon Doe Lero",sector_id:3)
+#Recinto.create(nombre:"reSC1", nombre_encargado: "Jhon Doe Lero",sector_id:3)
 
-Recinto.create(nombre:"reTRJ1", nombre_encargado: "Jhon Doe Lero",sector_id:4)
+#Recinto.create(nombre:"reTRJ1", nombre_encargado: "Jhon Doe Lero",sector_id:4)
 
 
-Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:1)
+Mesa.create( nombre_encargado: "Ricardo Koller",recinto_id:1)
 
-Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:2)
+#Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:2)
 
-Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:3)
-Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:4)
+#Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:3)
+#Mesa.create( nombre_encargado: "Jhon Doe Lero",recinto_id:4)
 
 
 Partido.create(nombre:"Partido1",informacion:"Este es el partido #1",votacion_id:1, color:"#ff3333", color_secundario:"#80ffff")
-Partido.create(nombre:"Partido2",informacion:"Este es el partido #1",votacion_id:1, color:"#b36b00", color_secundario:"#b3ffff")
-Partido.create(nombre:"Partido3",informacion:"Este es el partido #1",votacion_id:1, color:"#734d26", color_secundario:"#ebfafa")
-Partido.create(nombre:"Partido4",informacion:"Este es el partido #1",votacion_id:1, color:"#999900", color_secundario:"#e6e6ff")
+Partido.create(nombre:"Partido2",informacion:"Este es el partido #2",votacion_id:1, color:"#b36b00", color_secundario:"#b3ffff")
+Partido.create(nombre:"Partido3",informacion:"Este es el partido #3",votacion_id:1, color:"#734d26", color_secundario:"#ebfafa")
 
-Opcion.create(nombre:"Candidato 1 Partido 1", informacion:"Lorem Ipsum", partido_id:1)
+Opcion.create(nombre:"Evo Morales", informacion:"Lorem Ipsum", partido_id:1)
 
-Opcion.create(nombre:"Candidato 1 Partido 2", informacion:"Lorem Ipsum", partido_id:2)
+Opcion.create(nombre:"Samuel Doria Medina", informacion:"Lorem Ipsum", partido_id:2)
 
-Opcion.create(nombre:"Candidato 1 Partido 3", informacion:"Lorem Ipsum", partido_id:3)
-
-Opcion.create(nombre:"Candidato 1 Partido 4", informacion:"Lorem Ipsum", partido_id:4)
+Opcion.create(nombre:"Carlos Mesa", informacion:"Lorem Ipsum", partido_id:3)
 
 
 
