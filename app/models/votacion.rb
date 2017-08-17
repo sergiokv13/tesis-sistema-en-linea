@@ -36,7 +36,7 @@ class Votacion < ApplicationRecord
     def self.get_reporte_mesas
     	mesas = Hash.new
     	Opcion.all.each do |opcion|
-     		dir = opcion.direccion
+     		dir = opcion.direccion.strip
 			cmd = "multichain-cli cadena liststreamkeyitems root " + "'" + dir.to_s + "'"
      		res = %x[#{cmd}]
      		new_obj = JSON.parse res
