@@ -26,8 +26,7 @@ class RecintosController < ApplicationController
     recinto = Recinto.find(params[:id])
     nombre_separado = recinto.nombre_encargado.downcase.split(" ")
     email = nombre_separado.first + "." + nombre_separado.last + "recinto" + recinto.id.to_s + "@votacion.com"
-    password = "drperro13"
-    #(0...8).map { (65 + rand(26)).chr }.join
+    password = (0...8).map { (65 + rand(26)).chr }.join
     rol = "Encargado de recinto"
     password_reset = password
     if recinto.encargado == nil

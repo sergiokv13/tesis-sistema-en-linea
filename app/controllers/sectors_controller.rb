@@ -26,8 +26,7 @@ class SectorsController < ApplicationController
     sector = Sector.find(params[:id])
     nombre_separado = sector.nombre_encargado.downcase.split(" ")
     email = nombre_separado.first + "." + nombre_separado.last + "sector" + sector.id.to_s + "@votacion.com"
-    password = "drperro13"
-    #(0...8).map { (65 + rand(26)).chr }.join
+    password = (0...8).map { (65 + rand(26)).chr }.join
     rol = "Encargado de sector"
     password_reset = password
     if sector.encargado == nil

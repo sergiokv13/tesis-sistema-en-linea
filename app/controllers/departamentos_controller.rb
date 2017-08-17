@@ -27,8 +27,7 @@ class DepartamentosController < ApplicationController
       departamento = Departamento.find(params[:id])
       nombre_separado = departamento.nombre_encargado.downcase.split(" ")
       email = nombre_separado.first + "." + nombre_separado.last + "departamento" + departamento.id.to_s + "@votacion.com"
-      password = "drperro13"
-    #(0...8).map { (65 + rand(26)).chr }.join
+      password = (0...8).map { (65 + rand(26)).chr }.join
       rol = "Encargado de departamento"
       password_reset = password
       if departamento.encargado == nil
